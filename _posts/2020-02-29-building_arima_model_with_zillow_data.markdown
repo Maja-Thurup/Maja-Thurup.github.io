@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "Building Arima model with Zillow data "
-date:       2020-02-29 20:17:56 +0000
+date:       2020-02-29 15:17:57 -0500
 permalink:  building_arima_model_with_zillow_data
 ---
 
@@ -41,23 +41,17 @@ df_gr['growth_rate'] = 0```
 
 Find and store the percentage change for each month:
 
-```
-for num in range(len(cols.columns)-1):
-    df_gr['growth_rate'] += (1 - cols.iloc[:,num] / cols.iloc[:,num+1]) * 100
-```
+```for num in range(len(cols.columns)-1):
+    df_gr['growth_rate'] += (1 - cols.iloc[:,num] / cols.iloc[:,num+1]) * 100```
 
 Divide by the total number of months and find the mean change in %   
 
-```
-df_gr['growth_rate'] = df_gr['growth_rate'] / (len(cols.columns)-1)
-```
+```df_gr['growth_rate'] = df_gr['growth_rate'] / (len(cols.columns)-1)```
 
 Find difference between first and last price in %:
 
-```
-df_gr['first_vs_last'] = (1 - zipcodes['1996-04'] / zipcodes['2018-04']) * 100
-df_gr['current_price'] = zipcodes['2018-04']
-```
+```df_gr['first_vs_last'] = (1 - zipcodes['1996-04'] / zipcodes['2018-04']) * 100
+df_gr['current_price'] = zipcodes['2018-04']```
 
 
 Sort values in the ascending order:
