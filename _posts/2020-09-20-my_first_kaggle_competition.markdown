@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "My first Kaggle competition"
-date:       2020-09-20 21:12:26 +0000
+date:       2020-09-20 17:12:27 -0400
 permalink:  my_first_kaggle_competition
 ---
 
